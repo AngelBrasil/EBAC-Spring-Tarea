@@ -1,0 +1,18 @@
+2026-04-21 22:51:46.325688-06:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "EMPLEADO" ya existe
+Table "EMPLEADO" already exists; SQL statement:
+CREATE TABLE empleado(
+    id_empleado INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    direccion VARCHAR(100),
+    tipoEmpleado VARCHAR(20),
+    edad INT
+) [42101-232]
+2026-04-21 22:52:22.692644-06:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "DROP TABLE empleado,[*]"; se esperaba "identifier"
+Syntax error in SQL statement "DROP TABLE empleado,[*]"; expected "identifier"; SQL statement:
+DROP TABLE empleado, [42001-232]
+2026-04-21 23:20:15.456158-06:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "select * from empleado,[*]"; se esperaba "identifier"
+Syntax error in SQL statement "select * from empleado,[*]"; expected "identifier"; SQL statement:
+select * from empleado, [42001-232]
