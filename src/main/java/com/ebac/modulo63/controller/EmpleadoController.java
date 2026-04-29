@@ -34,11 +34,14 @@ public class EmpleadoController {
     }
 
     @PostMapping("/empleados")
-    public ResponseEntity<Empleado> altaEmpleado(@RequestBody Empleado empleadoNuevo) throws URISyntaxException {
+    public ResponseEntity<Empleado> altaEmpleado(@RequestBody Empleado empleadoNuevo)  {
         System.out.println("------------------------> AGREGA EMPLEADOS <------------------------");
-        System.out.println(empleadoNuevo);
-        empleadoService.altaEmpleado(empleadoNuevo);
-        return ResponseEntity.created(new URI("http://localhost/usuarios")).build();
+        try {
+            empleadoService.altaEmpleado(empleadoNuevo);
+            return ResponseEntity.created(new URI("http://localhost/empleados")).build();
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping("/empleados/{id}")

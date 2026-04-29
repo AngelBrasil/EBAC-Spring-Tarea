@@ -13,8 +13,13 @@ public class EmpleadoService {
     EmpleadoRepository empleadoRepository;
 
     //INSERT
-    public Empleado altaEmpleado(Empleado empleadoNuevo){
-        return empleadoRepository.save(empleadoNuevo);
+    public Empleado altaEmpleado(Empleado empleadoNuevo) throws Exception {
+        //valida
+        if (empleadoNuevo.getEdad() > 18){
+            return empleadoRepository.save(empleadoNuevo);
+        }else {
+            throw new Exception("Solo pueden trabajar mayores de 18 años");
+        }
     }
 
     //SELECT
